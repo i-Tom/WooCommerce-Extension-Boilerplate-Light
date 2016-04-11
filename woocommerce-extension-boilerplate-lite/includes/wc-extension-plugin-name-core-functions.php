@@ -82,9 +82,9 @@ function wc_extend_plugin_name_get_template( $template_name, $args = array(), $t
  * @param string $default_path (default: '')
  * @return string
  */
-function wc_extend_plugin_name_locate_template( $template_name, $template_path = '', $default_path = '' ) {
+function wc_extend_plugin_name_locate_template( $template, $template_name, $template_path = '' ) {
 	if ( ! $template_path ) $template_path = WC_Extend_Plugin_Name()->template_path();
-	if ( ! $default_path ) $default_path = WC_Extend_Plugin_Name()->wc_plugin_path() . '/templates/';
+	$default_path = WC_Extend_Plugin_Name()->wc_plugin_path() . '/templates/';
 
 	// Look within passed path within the theme - this is priority
 	$template = locate_template(
